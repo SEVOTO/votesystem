@@ -1,0 +1,168 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	-moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+	
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+	font-family: Agency FB 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+/*LOGIN*/
+.box {
+	position: relative;
+	width: 320px;
+	height: 420px;
+	background: #1c1c1c18;
+	border-radius: 8px;
+	overflow: hidden;
+
+}
+.box img {
+	align-content: center;
+
+}
+
+.box::before {
+	background: linear-gradient(0deg, transparent, #613ff8, #613ff8);
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 320px;
+	height: 420px;
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+}
+
+.box::after {
+	background: linear-gradient(0deg, transparent, #4520ec, #4520ec);
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 320px;
+	height: 420px;
+	transform-origin: bottom right;
+	animation: animate 6s linear infinite;
+	animation-delay: -3s;
+}
+
+@keyframes animate 
+{
+	0%
+	{
+		transform: rotate(0deg);
+	}
+	100%
+	{
+		transform: rotate(360deg);
+	}
+}
+
+form {
+	background-color: rgb(93, 207, 252);
+	position: absolute;
+	inset: 2px;
+	padding: 50px 40px;
+	border-radius: 8px;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+}
+
+.inputBox {
+	position: relative;
+	width: 250px;
+	margin-top: 35px;
+}
+
+.inputBox input {
+
+	position: relative;
+	width: 100%;
+	padding: 20px 10px 10px;
+	background-color: rgba(252, 252, 252, 0.733);
+	outline: none;
+	box-shadow: none;
+	border: none;
+	font-size: 1em;
+	letter-spacing: 0.05em;
+	transition: 0.5s;
+	z-index: 10;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span 
+{
+	color: #4520ec;
+	transform: translateX(0px) translateY(-34px);
+	font-size: 0.75em;
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i 
+{
+	height: 44px;
+}
+
+input[type="submit"] {
+	border: none;
+	outline: none;
+	padding: 11px 25px;
+	background: #078fffc2;
+	cursor: pointer;
+	border-radius: 4px;
+	font-weight: 600;
+	width: 250px;
+	margin-top: 10px;
+	color: white;
+}
+
+input[type="submit"]:active {
+	opacity: 0.8;
+}
+
+.img-Logo{
+    
+	width: 50%;
+	height:50%;
+	align-content: center;
+
+}
+
+.label{
+    
+	color:white;
+
+}
+.zoom-layer {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: zoom 1s forwards;
+}
+
+@keyframes zoom {
+	0% {
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
