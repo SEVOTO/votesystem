@@ -13,8 +13,8 @@
         			<td colspan="2" align="center" style="font-size:15px;"><b>'.$row['description'].'</b></td>
         		</tr>
         		<tr>
-        			<td width="80%"><b>Candidates</b></td>
-        			<td width="20%"><b>Votes</b></td>
+        			<td width="80%"><b>Candidatos</b></td>
+        			<td width="20%"><b>Votos</b></td>
         		</tr>
         	';
 
@@ -27,7 +27,7 @@
 
       			$contents .= '
       				<tr>
-      					<td>'.$crow['lastname'].", ".$crow['firstname'].'</td>
+      					<td>'.$crow['firstname'].", ".$crow['lastname'].'</td>
       					<td>'.$votes.'</td>
       				</tr>
       			';
@@ -42,7 +42,7 @@
 	$parse = parse_ini_file('config.ini', FALSE, INI_SCANNER_RAW);
     $title = $parse['election_title'];
 
-	require_once('../tcpdf/tcpdf.php');  
+	require_once('../../vendor/tecnickcom/tcpdf/tcpdf.php');  
     $pdf = new TCPDF('P', PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);  
     $pdf->SetCreator(PDF_CREATOR);  
     $pdf->SetTitle('Result: '.$title);  

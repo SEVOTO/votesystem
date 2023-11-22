@@ -25,13 +25,13 @@ $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 
 // Agregar encabezados de columnas
-$sheet->setCellValue('A1', 'voters_id');
-$sheet->setCellValue('B1', 'password');
-$sheet->setCellValue('C1', 'firstname');
-$sheet->setCellValue('D1', 'lastname');
-$sheet->setCellValue('E1', 'annio');
+$sheet->setCellValue('A1', 'Cedula');
+$sheet->setCellValue('B1', 'Contraseña');
+$sheet->setCellValue('C1', 'Nombre');
+$sheet->setCellValue('D1', 'Apellido');
+$sheet->setCellValue('E1', 'año');
 $sheet->setCellValue('F1', 'seccion');
-$sheet->setCellValue('G1', 'photo');
+$sheet->setCellValue('G1', 'foto');
 
 $i = 2; 
 

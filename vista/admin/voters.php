@@ -49,6 +49,9 @@
               <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
               <a href="#add_masive" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-file"></i> Carga masiva</a>
               <a href="download_excel.php" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-download"></i>Descargar archivo de Carga Masiva</a>
+              <span class="pull-right">
+              <a href="print_cuaderno.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Cuaderno electoral</a>
+            </span>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">

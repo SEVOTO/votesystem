@@ -1,6 +1,9 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition skin-blue layout-top-nav">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="dist/js/captcha.js"></script>
+
 <script>
         var timeoutID;
         var counter = 120; // 5 minutes in seconds
