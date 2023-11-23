@@ -19,6 +19,26 @@
 
 <!-- Add -->
 <div class="modal fade" id="addnew">
+<script src="../dist/js/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#search_text').keyup(function(){
+                var txt = $(this).val();
+                if(txt != ''){
+                    $.ajax({
+                        url: "get_user_data.php",
+                        method: "POST",
+                        data: {search_text: txt},
+                        success: function(data){
+                            $('#result').html(data);
+                        }
+                    });
+                } else {
+                    $('#result').html('');
+                }
+            });
+        });
+    </script>
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -26,28 +46,21 @@
                   <span aria-hidden="true">&times;</span></button>
               <h4 class="modal-title"><b>Agregar nuevo candidato</b></h4>
             </div>
+            <div class="form-group">
+            <label for="search_text">Ingrese la cedula del candidato a postular:</label>
+            <input type="text" class="form-control" id="search_text" name="search_text">
+            </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_add.php" enctype="multipart/form-data">
-                <div class="form-group">
-                    <label for="firstname" class="col-sm-3 control-label">Nombre</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="firstname" name="firstname" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="lastname" class="col-sm-3 control-label">Apellido</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="lastname" name="lastname" required>
-                    </div>
+                <div class="form-group" id="result">
+                    
                 </div>
                 <div class="form-group">
                     <label for="position" class="col-sm-3 control-label">Cargo</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" id="position" name="position" required>
-                        <option value="" selected>- Seleccionar -</option>
+                        <option value="" selected>- Select -</option>
                         <?php
                           $sql = "SELECT * FROM positions";
                           $query = $conn->query($sql);

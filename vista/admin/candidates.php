@@ -15,7 +15,7 @@
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Hogar</a></li>
-        <li class="active">Candidato</li>
+        <li class="active">Candidatos</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -76,8 +76,8 @@
                           <td>".$row['lastname']."</td>
                           <td>
                           <a href='#platform' data-toggle='modal' class='btn btn-info btn-sm btn-flat platform' data-id='".$row['canid']."'><i class='fa fa-search'></i> Mensaje</a>
-                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['canid']."'><i class='fa fa-edit'></i> Editar</button>
-                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['canid']."'><i class='fa fa-trash'></i> Borrar</button>
+                          <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['canid']."'><i class='fa fa-edit'></i> Editar</button>
+                          <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['canid']."'><i class='fa fa-trash'></i> Eliminar</button>
                           </td>
                         </tr>
                       ";
