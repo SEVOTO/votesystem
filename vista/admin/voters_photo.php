@@ -10,7 +10,7 @@
 		
 		$sql = "UPDATE voters SET photo = '$filename' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Photo updated successfully';
+			$_SESSION['success'] = 'Foto actualizada satisfactoriamente';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
@@ -18,7 +18,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Select voter to update photo first';
+		$_SESSION['error'] = 'Rellene todos los datos primeros';
 	}
 
 	header('location: voters.php');

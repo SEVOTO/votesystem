@@ -24,30 +24,30 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Candidate</b></h4>
+              <h4 class="modal-title"><b>Agregar nuevo candidato</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_add.php" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="firstname" class="col-sm-3 control-label">Nombre</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="firstname" name="firstname" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="lastname" class="col-sm-3 control-label">Apellido</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="lastname" name="lastname" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="position" class="col-sm-3 control-label">Position</label>
+                    <label for="position" class="col-sm-3 control-label">Cargo</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" id="position" name="position" required>
-                        <option value="" selected>- Select -</option>
+                        <option value="" selected>- Seleccionar -</option>
                         <?php
                           $sql = "SELECT * FROM positions";
                           $query = $conn->query($sql);
@@ -61,14 +61,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo</label>
+                    <label for="photo" class="col-sm-3 control-label">Foto</label>
 
                     <div class="col-sm-9">
                       <input type="file" id="photo" name="photo">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="platform" class="col-sm-3 control-label">Platform</label>
+                    <label for="platform" class="col-sm-3 control-label">Mensaje</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" id="platform" name="platform" rows="7"></textarea>
@@ -76,8 +76,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Save</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-primary btn-flat" name="add"><i class="fa fa-save"></i> Guardar</button>
               </form>
             </div>
         </div>
@@ -91,27 +91,27 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Voter</b></h4>
+              <h4 class="modal-title"><b>Editar candidato</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_edit.php">
                 <input type="hidden" class="id" name="id">
                 <div class="form-group">
-                    <label for="edit_firstname" class="col-sm-3 control-label">Firstname</label>
+                    <label for="edit_firstname" class="col-sm-3 control-label">Nombre</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_firstname" name="firstname" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_lastname" class="col-sm-3 control-label">Lastname</label>
+                    <label for="edit_lastname" class="col-sm-3 control-label">Apellido</label>
 
                     <div class="col-sm-9">
                       <input type="text" class="form-control" id="edit_lastname" name="lastname" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_position" class="col-sm-3 control-label">Position</label>
+                    <label for="edit_position" class="col-sm-3 control-label">CArgo</label>
 
                     <div class="col-sm-9">
                       <select class="form-control" id="edit_position" name="position" required>
@@ -129,7 +129,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="edit_platform" class="col-sm-3 control-label">Platform</label>
+                    <label for="edit_platform" class="col-sm-3 control-label">Mensaje</label>
 
                     <div class="col-sm-9">
                       <textarea class="form-control" id="edit_platform" name="platform" rows="7"></textarea>
@@ -137,8 +137,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-success btn-flat" name="edit"><i class="fa fa-check-square-o"></i> Actualizar</button>
               </form>
             </div>
         </div>
@@ -152,19 +152,19 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Deleting...</b></h4>
+              <h4 class="modal-title"><b>Borrar...</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_delete.php">
                 <input type="hidden" class="id" name="id">
                 <div class="text-center">
-                    <p>DELETE CANDIDATE</p>
+                    <p>BORRAR CANDIDATO</p>
                     <h2 class="bold fullname"></h2>
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> Delete</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-danger btn-flat" name="delete"><i class="fa fa-trash"></i> Borrar</button>
               </form>
             </div>
         </div>
@@ -178,13 +178,13 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b><span class="fullname"></span></b></h4>
+              <h4 class="modal-title"><b>Editar foto: <span class="fullname"></span></b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_photo.php" enctype="multipart/form-data">
                 <input type="hidden" class="id" name="id">
                 <div class="form-group">
-                    <label for="photo" class="col-sm-3 control-label">Photo</label>
+                    <label for="photo" class="col-sm-3 control-label">Foto</label>
 
                     <div class="col-sm-9">
                       <input type="file" id="photo" name="photo" required>
@@ -192,8 +192,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Close</button>
-              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Update</button>
+              <button type="button" class="btn btn-default btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i> Cerrar</button>
+              <button type="submit" class="btn btn-success btn-flat" name="upload"><i class="fa fa-check-square-o"></i> Actualizar</button>
               </form>
             </div>
         </div>

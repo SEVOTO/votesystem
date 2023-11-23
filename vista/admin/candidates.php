@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Candidates List
+        Lista de candidato
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Candidates</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Hogar</a></li>
+        <li class="active">Candidato</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -46,18 +46,17 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Agregar</a>
             </div>
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Position</th>
-                  <th>Photo</th>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Platform</th>
-                  <th>Tools</th>
+                  <th>Cargo</th>
+                  <th>Foto</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Herramientas</th>
                 </thead>
                 <tbody>
                   <?php
@@ -75,10 +74,10 @@
                           </td>
                           <td>".$row['firstname']."</td>
                           <td>".$row['lastname']."</td>
-                          <td><a href='#platform' data-toggle='modal' class='btn btn-info btn-sm btn-flat platform' data-id='".$row['canid']."'><i class='fa fa-search'></i> View</a></td>
                           <td>
-                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['canid']."'><i class='fa fa-edit'></i> Edit</button>
-                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['canid']."'><i class='fa fa-trash'></i> Delete</button>
+                          <a href='#platform' data-toggle='modal' class='btn btn-info btn-sm btn-flat platform' data-id='".$row['canid']."'><i class='fa fa-search'></i> Mensaje</a>
+                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['canid']."'><i class='fa fa-edit'></i> Editar</button>
+                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['canid']."'><i class='fa fa-trash'></i> Borrar</button>
                           </td>
                         </tr>
                       ";

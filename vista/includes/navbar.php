@@ -2,10 +2,10 @@
   <nav class="navbar navbar-static-top">
     <div class="container">
       <div class="navbar-header">
-        <a href="#" class="navbar-brand"><b>Voting</b>System</a>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+        <a href="#" class="navbar-brand"><b>SEVOTO</b></a>
+<!--         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <i class="fa fa-bars"></i>
-        </button>
+        </button> -->
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,7 +31,7 @@
               <span class="hidden-xs"><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
             </a>
           </li>
-          <li><a href="logout.php"><i class="fa fa-sign-out"></i> LOGOUT</a></li>  
+          <li><a href="logout.php"><i class="fa fa-sign-out"></i> Cerrar sesion</a></li>  
         </ul>
       </div>
       <!-- /.navbar-custom-menu -->

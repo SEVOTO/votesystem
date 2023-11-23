@@ -15,7 +15,7 @@
 
 		$sql = "INSERT INTO voters (voters_id, password, firstname, lastname, annio, seccion, photo) VALUES ('$voters_id', '$password', '$firstname', '$lastname', '$annio', '$seccion', '$filename')";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Voter added successfully';
+			$_SESSION['success'] = 'Votante agregado satisfactoriamente';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
@@ -23,7 +23,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		$_SESSION['error'] = 'Selecciona todos los datos primero';
 	}
 
 	header('location: voters.php');

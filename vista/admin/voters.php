@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Voters List
+        Lista de votantes
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Voters</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Hogar</a></li>
+        <li class="active">Votantes</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -46,7 +46,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
+              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> Agregar</a>
               <a href="#add_masive" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-file"></i> Carga masiva</a>
               <a href="download_excel.php" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-download"></i>Descargar archivo de Carga Masiva</a>
               <span class="pull-right">
@@ -56,13 +56,13 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Firstname</th>
-                  <th>Lastname</th>
-                  <th>Voters ID</th>
-                  <th>Annio</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>Cedula</th>
+                  <th>Año</th>
                   <th>Seccion</th>
-                  <th>Photo</th>
-                  <th>Tools</th>
+                  <th>Foto</th>
+                  <th>Herrramientas</th>
                 </thead>
                 <tbody>
                   <?php
@@ -82,8 +82,8 @@
                             <a href='#edit_photo' data-toggle='modal' class='pull-right photo' data-id='".$row['id']."'><span class='fa fa-edit'></span></a>
                           </td>
                           <td>
-                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
-                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
+                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Editar</button>
+                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Eliminar</button>
                           </td>
                         </tr>
                       ";

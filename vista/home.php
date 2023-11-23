@@ -1,13 +1,74 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition skin-blue layout-top-nav">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="dist/js/sweetalert2@11.js"></script>
 <script src="dist/js/captcha.js"></script>
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+    showCaptchaAlert();
+});
+document.addEventListener('DOMContentLoaded', function () {
+    disableCopyPaste();
+});
 
+function disableCopyPaste() {
+    var body = document.getElementsByTagName('body')[0];
+    body.oncopy = function (event) {
+        event.preventDefault();
+    };
+    body.onpaste = function (event) {
+        event.preventDefault();
+    };
+}
+let captchaGenerated;
+
+function generateCaptcha() {
+    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let captcha = '';
+    for (let i = 0; i < 6; i++) {
+        captcha += chars[Math.floor(Math.random() * chars.length)];
+    }
+    captchaGenerated = captcha;
+    return captcha;
+}
+
+function showCaptchaAlert() {
+    generateCaptcha();
+    Swal.fire({
+        title: '<h1>Por favor, ingrese el captcha:</h1>',
+        html: '<h3>Captcha generado:</h3> <strong style="font-size: 5em;background-color: #1a1a1a; padding: 1px; border-radius: 10px; color: white;">' + captchaGenerated + '</strong>',
+        input: 'text',
+        inputAttributes: {
+            autocapitalize: 'off',
+            autocorrect: 'off',
+            autofocus: 'on',
+            required: 'required',
+        },
+        confirmButtonText: '<h4>Verificar</h4>',
+        allowOutsideClick: () => false, // Previene que el usuario salga del cuadro pulsando fuera
+        showLoaderOnConfirm: true,
+        preConfirm: (inputCaptcha) => {
+            if (inputCaptcha.toLowerCase() === captchaGenerated.toLowerCase()) {
+                Swal.fire({
+                    title: 'Correcto!',
+                    icon: 'success',
+                });
+            } else {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'El captcha ingresado es incorrecto.',
+                    icon: 'error',
+                });
+                window.location.href = 'logout.php';
+            }
+        },
+    });
+}
+</script>
 <script>
         var timeoutID;
-        var counter = 120; // 5 minutes in seconds
-        var resetCounter = 60; // 3 minutes in seconds
+        var counter = 300; // 5 minutes in seconds
+        var resetCounter = 150; // 3 minutes in seconds
         var timerReset = false;
 
         function startTimer() {
@@ -116,8 +177,8 @@
 				    	if($vquery->num_rows > 0){
 				    		?>
 				    		<div class="text-center">
-					    		<h3>You have already voted for this election.</h3>
-					    		<a href="#view" data-toggle="modal" class="btn btn-flat btn-primary btn-lg">View Ballot</a>
+					    		<h3>Ya usted participo en esta eleccion.</h3>
+					    		<a href="#view" data-toggle="modal" class="btn btn-flat btn-primary btn-lg">Ver voto realizado</a>
 					    	</div>
 				    		<?php
 				    	}
@@ -157,12 +218,12 @@
 											$image = (!empty($crow['photo'])) ? 'images/'.$crow['photo'] : 'images/profile.jpg';
 											$candidate .= '
 												<li>
-													'.$input.'<button type="button" class="btn btn-primary btn-sm btn-flat clist platform" data-platform="'.$crow['platform'].'" data-fullname="'.$crow['firstname'].' '.$crow['lastname'].'"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
+													'.$input.'<img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
 												</li>
 											';
 										}
 
-										$instruct = ($row['max_vote'] > 1) ? 'You may select up to '.$row['max_vote'].' candidates' : 'Select only one candidate';
+										$instruct = ($row['max_vote'] > 1) ? 'Usted a seleccionado al candidato:  '.$row['max_vote'].' candidates' : 'Selecciona solo un candidato';
 
 										echo '
 											<div class="row">
@@ -174,7 +235,7 @@
 														<div class="box-body">
 															<p>'.$instruct.'
 																<span class="pull-right">
-																	<button type="button" class="btn btn-success btn-sm btn-flat reset" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reset</button>
+																	<button type="button" class="btn btn-success btn-sm btn-flat reset" data-desc="'.slugify($row['description']).'"><i class="fa fa-refresh"></i> Reiniciar</button>
 																</span>
 															</p>
 															<div id="candidate_list">
@@ -194,10 +255,12 @@
 
 				        		?>
 				        		<div class="text-center">
-					        		<button type="button" class="btn btn-success btn-flat" id="preview"><i class="fa fa-file-text"></i> Preview</button> 
-					        		<button type="submit" class="btn btn-primary btn-flat" name="vote"><i class="fa fa-check-square-o"></i> Submit</button>
-					        	</div>
+					        		<button type="button" class="btn btn-success btn-flat" id="preview"><i class="fa fa-file-text"></i> Vista previa</button> 
+					        		<button type="submit" class="btn btn-primary btn-flat" name="vote"><i class="fa fa-check-square-o"></i> Votar</button>
+					        	
+								</div>
 				        	</form>
+
 				        	<!-- End Voting Ballot -->
 				    		<?php
 				    	}
@@ -242,7 +305,7 @@ $(function(){
 		e.preventDefault();
 		var form = $('#ballotForm').serialize();
 		if(form == ''){
-			$('.message').html('You must vote atleast one candidate');
+			$('.message').html('Solo puedes votar por un candidato');
 			$('#alert').show();
 		}
 		else{

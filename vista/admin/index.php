@@ -13,8 +13,8 @@
       <link rel="stylesheet" href="../plugins/iCheck/all.css">
     <link rel="stylesheet" href="../estilos/estilos.css">
     <link href="../dist/img/sevoto.png" rel="icon" type="image/png" />
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../dist/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="../dist/js/sweetalert2@11.js"></script>
     <title>SEVOTO</title>
 
   	<!-- Google Font -->
@@ -32,11 +32,11 @@
                             <div class="inputBox">
                                 <div class="form-group">
                                     <label for="usuario" class="label"><b>Usuario</b></label>
-                                    <input type="text" name="username"required>
+                                    <input type="text" name="username"required autocomplete="off">
                                 </div>
                                 <div class="form-group">
                                     <label for="password" class="label"><b>Contraseña</b></label>
-                                    <input type="password" class="form-control" name="password"required>
+                                    <input type="password" class="form-control" name="password"required autocomplete="off">
                                 </div>
                                 <input type="submit" name="login" placeholder="Iniciar Sesión">
                             </div>

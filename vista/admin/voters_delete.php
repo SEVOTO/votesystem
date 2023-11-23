@@ -5,14 +5,14 @@
 		$id = $_POST['id'];
 		$sql = "DELETE FROM voters WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Voter deleted successfully';
+			$_SESSION['success'] = 'Votante eliminado satisfactoriamente';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Select item to delete first';
+		$_SESSION['error'] = 'Rellene todos los datos primeros';
 	}
 
 	header('location: voters.php');

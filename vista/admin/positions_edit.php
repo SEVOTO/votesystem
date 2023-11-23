@@ -8,14 +8,14 @@
 
 		$sql = "UPDATE positions SET description = '$description', max_vote = '$max_vote' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Position updated successfully';
+			$_SESSION['success'] = 'Cargo actualizado satisfactoriamente';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit form first';
+		$_SESSION['error'] = 'Rellene todos los datos correctamente';
 	}
 
 	header('location: positions.php');

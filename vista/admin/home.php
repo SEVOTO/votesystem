@@ -13,11 +13,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
+        Tablero de mando
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Hogar</a></li>
+        <li class="active">Tablero de mando</li>
       </ol>
     </section>
 
@@ -58,12 +58,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>No. of Positions</p>
+              <p>No. de cargos</p>
             </div>
             <div class="icon">
               <i class="fa fa-tasks"></i>
             </div>
-            <a href="positions.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="positions.php" class="small-box-footer">Mostrar informacion <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -78,12 +78,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
           
-              <p>No. of Candidates</p>
+              <p>No. de candidatos</p>
             </div>
             <div class="icon">
               <i class="fa fa-black-tie"></i>
             </div>
-            <a href="candidates.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="candidates.php" class="small-box-footer">Mostrar informacion <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -98,12 +98,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
              
-              <p>Total Voters</p>
+              <p>Total Votantes</p>
             </div>
             <div class="icon">
               <i class="fa fa-users"></i>
             </div>
-            <a href="voters.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="voters.php" class="small-box-footer">Mostrar informacion <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -118,12 +118,12 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>Voters Voted</p>
+              <p>Conteo de votos</p>
             </div>
             <div class="icon">
               <i class="fa fa-edit"></i>
             </div>
-            <a href="votes.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="votes.php" class="small-box-footer">Mostrar informacion <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -131,12 +131,9 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <h3>Votes Tally
+          <h3>Graficas de participacion
             <span class="pull-right">
               <a href="print_acta0.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Acta de inicializacion en 0</a>
-            </span>
-            <span class="pull-right">
-              <a href="vista_diagramas.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Descargar Graficas</a>
             </span>
           </h3>
         </div>

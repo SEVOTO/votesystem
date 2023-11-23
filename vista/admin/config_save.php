@@ -14,11 +14,11 @@
 
 		file_put_contents($file, $content);
 
-		$_SESSION['success'] = 'Election title updated successfully';
+		$_SESSION['success'] = 'Titulo de la Eleccion actualizado satisfactoriamente';
 		
 	}
 	else{
-		$_SESSION['error'] = "Fill up config form first";
+		$_SESSION['error'] = "Seleccione la configuracion primero";
 	}
 
 	header('location: '.$return);

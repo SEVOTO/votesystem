@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Votes
+        Votos
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Votes</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> Hogar</a></li>
+        <li class="active">Votos</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -46,7 +46,7 @@
         <div class="col-xs-12">
           <div class="box">
             <div class="box-header with-border">
-              <a href="#reset" data-toggle="modal" class="btn btn-danger btn-sm btn-flat"><i class="fa fa-refresh"></i> Reset</a>
+              <a href="#reset" data-toggle="modal" class="btn btn-danger btn-sm btn-flat"><i class="fa fa-refresh"></i> Reiniciar</a>
               <span class="pull-right">
               <a href="print.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Reporte final</a>
             </span>

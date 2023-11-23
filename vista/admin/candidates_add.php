@@ -13,7 +13,7 @@
 
 		$sql = "INSERT INTO candidates (position_id, firstname, lastname, photo, platform) VALUES ('$position', '$firstname', '$lastname', '$filename', '$platform')";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Candidate added successfully';
+			$_SESSION['success'] = 'Candidato agregado con exito!';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
@@ -21,7 +21,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		$_SESSION['error'] = 'Todos los campos son obligatorios';
 	}
 
 	header('location: candidates.php');

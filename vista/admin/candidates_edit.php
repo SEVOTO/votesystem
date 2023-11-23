@@ -10,14 +10,14 @@
 
 		$sql = "UPDATE candidates SET firstname = '$firstname', lastname = '$lastname', position_id = '$position', platform = '$platform' WHERE id = '$id'";
 		if($conn->query($sql)){
-			$_SESSION['success'] = 'Candidate updated successfully';
+			$_SESSION['success'] = 'Candidatos actualizado con exito!';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
 	}
 	else{
-		$_SESSION['error'] = 'Fill up edit form first';
+		$_SESSION['error'] = 'Todos los campos son obligatorios';
 	}
 
 	header('location: candidates.php');

@@ -41,12 +41,12 @@
                             <div class="inputBox">
                                 <div class="form-group">
                                     <label for="usuario" class="label"><b>Cedula</b></label>
-                                    <input type="text" name="voter"required>
+                                    <input type="number" name="voter"required autocomplete="off">
                                 </div>
                                 <br>
                                 <div class="form-group">
                                     <label for="password" class="label"><b>Contraseña</b></label>
-                                    <input type="password" class="form-control" name="password"required>
+                                    <input type="password" class="form-control" name="password" required autocomplete="off">
                                 </div>
                                 <input type="submit" name="login" placeholder="Iniciar Sesión">
                             </div>
