@@ -2,6 +2,7 @@
 <?php include 'includes/slugify.php'; ?>
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/scripts.php'; ?>
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -9,7 +10,7 @@
   <?php include 'includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" id="contenido">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
@@ -134,6 +135,8 @@
           <h3>Graficas de participacion
             <span class="pull-right">
               <a href="print_acta0.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Acta de inicializacion en 0</a>
+              <button  class="btn btn-success btn-sm btn-flat" onclick="guardarComoPDF()" ><span class="glyphicon glyphicon-download"></span> Descargar PDF</button>
+
             </span>
           </h3>
         </div>
@@ -148,7 +151,7 @@ $query = $conn->query($sql);
 $inc = 2;
 while($row = $query->fetch_assoc()){
   $inc = ($inc == 2) ? 1 : $inc+1; 
-  if($inc == 1) echo "<div class='row'>";
+  if($inc == 1) echo "<div class='row' id='graficas'>";
   echo "
     <div class='col-sm-6'>
       <div class='box box-solid'>
@@ -461,7 +464,22 @@ while($row = $query->fetch_assoc()){
 
 </div>
 <!-- ./wrapper -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
 
+              <script>
+                function guardarComoPDF() {
+                  const divGraficas = document.getElementById('contenido');
+                  html2canvas(divGraficas).then(canvas => {
+                    const imgData = canvas.toDataURL('image/png');
+                    const pdf = new jsPDF('p', 'mm', 'a4');
+                    const pdfWidth = 210; // Ancho de la página A4 en mm
+                    const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+                    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                    pdf.save('graficas.pdf');
+                  });
+                }
+              </script>
 
 
 </body>
