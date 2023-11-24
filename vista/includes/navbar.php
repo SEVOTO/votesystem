@@ -24,18 +24,35 @@
       <!-- /.navbar-collapse -->
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <li class="user user-menu">
-            <a href="">
-              <img src="<?php echo (!empty($voter['photo'])) ? 'images/'.$voter['photo'] : 'images/profile.jpg' ?>" class="user-image" alt="User Image">
-              <span class="hidden-xs"><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
-            </a>
-          </li>
-          <li><a href="logout.php"><i class="fa fa-sign-out"></i> Cerrar sesion</a></li>  
-        </ul>
+      <ul class="nav navbar-nav">
+        <!-- User Account: style can be found in dropdown.less -->
+        <li class="dropdown user user-menu">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="<?php echo (!empty($voter['photo'])) ? 'images/'.$voter['photo'] : '../images/profile.jpg'; ?>" class="user-image" alt="User Image">
+            <span class="hidden-xs"><?php echo $voter['firstname'].' '.$voter['lastname']; ?></span>
+          </a>
+          <ul class="dropdown-menu">
+            <!-- User image -->
+            <li class="user-header">
+              <img src="<?php echo (!empty($voter['photo'])) ? 'images/'.$voter['photo'] : '../images/profile.jpg'; ?>" class="img-circle" alt="User Image">
+
+              <p>
+                <?php echo $voter['firstname'].' '.$voter['lastname']; ?>
+              </p>
+            </li>
+            <li class="user-footer">
+              <div class="pull-left">
+                <a href="#profile" data-toggle="modal" class="btn btn-default btn-flat" id="admin_profile">Actualizar datos</a>
+              </div>
+              <div class="pull-right">
+                <a href="logout.php" class="btn btn-default btn-flat">Cerrar sesion</a>
+              </div>
+            </li>
+          </ul>
       </div>
       <!-- /.navbar-custom-menu -->
     </div>
     <!-- /.container-fluid -->
   </nav>
 </header>
+<?php include 'profile_modal_voters.php'; ?>

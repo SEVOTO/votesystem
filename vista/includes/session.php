@@ -1,8 +1,8 @@
 <?php
-	include 'includes/conn.php';
 	session_start();
+	include 'includes/conn.php';
 
-	if(isset($_SESSION['voter'])){
+	if(isset($_SESSION['voter'])|| trim($_SESSION['voter']) == ''){
 		$sql = "SELECT * FROM voters WHERE id = '".$_SESSION['voter']."'";
 		$query = $conn->query($sql);
 		$voter = $query->fetch_assoc();

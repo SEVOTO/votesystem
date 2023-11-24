@@ -27,7 +27,7 @@ if($result->num_rows > 0){
 } else {
     echo "<div class='item active'>";
     echo "<div class='container'><div class='carousel-caption'>";
-    echo "<h3>No se encontraron resultados</h3>";
+    echo "<h1 style= 'font-size:70px; background-color: #000; border-radius: 10px;'>No se encontraron resultados</h1>";
     echo "</div></div>";
     echo "</div>";
 }

@@ -44,12 +44,15 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Agregar nuevo candidato</b></h4>
-            </div>
+              <h3 class="modal-title"><b>Agregar nuevo candidato</b></h3>
+            <br>
             <div class="form-group">
-            <label for="search_text">Ingrese la cedula del candidato a postular:</label>
-            <input type="text" class="form-control" id="search_text" name="search_text">
+              <div class="col-sm-9">
+              <label for="search_text">Ingrese la cedula del candidato a postular:</label>
+              <input type="text" class="form-control" id="search_text" name="search_text">
             </div>
+          </div>
+          </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_add.php" enctype="multipart/form-data">
                 <div class="form-group" id="result">
